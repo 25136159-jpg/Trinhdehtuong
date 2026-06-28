@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+  color: white;
+  text-align: center;
+}
+
+.box, .container, .letter, .gallery {
+  margin-top: 100px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+button, .btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background: white;
+  color: #ff4d6d;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.slider {
+  width: 300px;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slide.active {
+  display: block;
+}
