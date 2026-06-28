@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery 📸</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="gallery">
+  <h1>📷 Kỷ niệm của chúng ta</h1>
+
+  <div class="slider">
+    <img src="img1.jpg" class="slide active">
+    <img src="img2.jpg" class="slide">
+    <img src="img3.jpg" class="slide">
+    <img src="img4.jpg" class="slide">
+  </div>
+
+  <button onclick="next()">▶ Next</button>
+
+  <a href="page5.html" class="btn">Kết thúc 💖</a>
+</div>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function show(i){
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+function next(){
+  index = (index + 1) % slides.length;
+  show(index);
+}
+</script>
+
+</body>
+</html>
