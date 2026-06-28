@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>💌 Letter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7,#c2e9fb);
+  background-size: 300% 300%;
+  animation: bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove {
+  0% {background-position:0% 50%;}
+  100% {background-position:100% 50%;}
+}
+
+/* 💖 floating hearts */
+.heart {
+  position: absolute;
+  color: white;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(100vh) scale(0.5);}
+  100% {transform: translateY(-10vh) scale(1.2);}
+}
+
+/* 📜 letter box */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: pink;
+}
+
+/* 💌 title */
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-size: 32px;
+}
+
+/* ✍️ text */
+#text {
+  font-size: 18px;
+  line-height: 1.8;
+  min-height: 200px;
+  white-space: pre-wrap;
+}
+
+/* cursor */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background: white;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {opacity: 0;}
+}
+
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3">
+</audio>
+
+<div class="card">
+  <h1>💌 Gửi anh Hiếu</h1>
+  <div id="text"></div><span class="cursor"></span>
+
+  <button class="btn" onclick="nextPage()">Đi tiếp 💖</button>
+</div>
+
+<script>
+/* 💖 letter content */
+const content = 
+`Chúc mừng sinh nhật người bé thương…
+
+Lại thêm 1 năm được đón sinh nhật cùng anh rùi nè
+
+Hôm nay là 1 ngày vô cùng đặc biệt, ngày mà thế giới có thêm 1 người siuu tuyệt vời
+
+Bé chúc anh luôn vững vàng và thành công trên mọi chặng đường. 
+Đặc biệt là yêu chiều bé hơn tuổi cũ nhíeee
+
+Bé cảm ơn anh rất nhiều...
+
+Cảm ơn anh vì đã luôn ở bên bé, yêu thương và nhẫn nhịn bé 💖
+
+Yêu anh nhiều
+Tẹn anh 1000 nụ hônn
+
+🎂 Happy Birthday ❤️`;
+
+/* ✍️ typewriter */
+let i = 0;
+function typeWriter() {
+  if (i < content.length) {
+    document.getElementById("text").innerHTML += content.charAt(i);
+    i++;
+    setTimeout(typeWriter, 35);
+  }
+}
+typeWriter();
+
+/* 💖 floating hearts */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 400);
+
+/* next page */
+function nextPage(){
+  window.location.href = "page4.html";
+}
+</script>
+
+</body>
+</html>
