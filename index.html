@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Anh Hiếu 💌</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<audio id="bgm" src="music.mp3" loop></audio>
+
+<!-- ENVELOPE -->
+<div id="screen-envelope" class="screen center">
+  <div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+    <div class="body"></div>
+    <p>Click để mở thư 💌</p>
+  </div>
+</div>
+
+<!-- LETTER -->
+<div id="screen-letter" class="screen hidden">
+  <div class="letter-box">
+    <h2>Tadaaa ✨</h2>
+
+    <div id="typewriter"></div>
+
+    <button onclick="openGallery()" class="btn">
+      Xem kỉ niệm 💕
+    </button>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="screen-gallery" class="screen hidden">
+  <h2 class="title">Kỉ niệm của tụi mình 📸</h2>
+
+  <div class="slideshow">
+    <img class="slide active" src="img1.jpg">
+    <img class="slide" src="img2.jpg">
+    <img class="slide" src="img3.jpg">
+    <img class="slide" src="img4.jpg">
+  </div>
+
+  <button onclick="replay()" class="btn">Xem lại từ đầu 🔁</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
